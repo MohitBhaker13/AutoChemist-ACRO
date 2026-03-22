@@ -1,8 +1,8 @@
-# ACRO: Autonomous Chemical Research Orchestrator🧬🧪
+# ACRO: Autonomous Chemical Research Orchestrator
 
 ACRO is a terminal-first autonomous agent that helps optimize chemical reactions. It combines LLM reasoning with a high-quality simulator to find the best reaction conditions like temperature, catalyst amount, and solvent type through repeated experiments.
 
-## 🌟 Inspiration
+## Inspiration
 
 ACRO is inspired by **Andrej Karpathy** and his idea of **autonomous research agents**. The goal is to build systems that keep improving on their own without human involvement.
 
@@ -10,7 +10,7 @@ ACRO works in a continuous loop. It runs an experiment, checks the result such a
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ACRO is built on a modular, provider-agnostic architecture using the latest in AI orchestration:
 
@@ -22,7 +22,7 @@ ACRO is built on a modular, provider-agnostic architecture using the latest in A
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 - Python 3.10+
@@ -51,7 +51,7 @@ export ACRO_API_KEY="your-api-key-here"
 
 ---
 
-## 🧪 Usage
+## Usage
 
 Simply run the main orchestrator:
 ```bash
@@ -69,7 +69,7 @@ python main.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 - `main.py`: The terminal UI and experiment loop engine.
 - `researcher.py`: The AI researcher logic and prompt engineering.
