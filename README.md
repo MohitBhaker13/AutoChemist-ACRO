@@ -1,10 +1,12 @@
-# ACRO: Autonomous Chemical Research Orchestrator 🧬🧪
+# ACRO: Autonomous Chemical Research Orchestrator🧬🧪
 
-ACRO is a terminal-first autonomous agent designed to optimize chemical reactions. It combines the reasoning power of Large Language Models (LLMs) with a high-fidelity chemical simulator to discover optimal reaction conditions (temperature, catalyst loading, and solvent polarity) through iterative experimentation.
+ACRO is a terminal-first autonomous agent that helps optimize chemical reactions. It combines LLM reasoning with a high-quality simulator to find the best reaction conditions like temperature, catalyst amount, and solvent type through repeated experiments.
 
 ## 🌟 Inspiration
 
-The vision for ACRO was inspired by **Andrej Karpathy**'s (Co-founder of OpenAI) core vision for **Autonomous Training Agents**—AI systems capable of iterative, self-correcting exploration. ACRO embodies this "self-improving" loop: it observes its own experimental failures (low yields), updates its chemical hypothesis, and corrects its parameters in the next iteration. It moves beyond simple text generation to become a living, closed-loop research engine.
+ACRO is inspired by **Andrej Karpathy** and his idea of **autonomous research agents**. The goal is to build systems that keep improving on their own without human involvement.
+
+ACRO works in a continuous loop. It runs an experiment, checks the result such as reaction yield, updates its understanding, and tries again with better settings. Each cycle builds on the previous one, similar to how an agent improves a training system step by step to get better performance over time. The focus is on continuous improvement, not just generating outputs.
 
 ---
 
@@ -12,11 +14,11 @@ The vision for ACRO was inspired by **Andrej Karpathy**'s (Co-founder of OpenAI)
 
 ACRO is built on a modular, provider-agnostic architecture using the latest in AI orchestration:
 
-- **Orchestration**: Built with **LangChain**, utilizing standard message abstractions to decouple research logic from API formats.
-- **Connectivity**: Integrated with **LiteLLM**, allowing the system to use any provider (Gemini, OpenAI, Anthropic, OpenRouter, etc.) by simply changing an environment variable.
+- **Orchestration**: Built using **LangChain** to manage the workflow while keeping research logic separate from model APIs
+- **Connectivity**: Uses **LiteLLM** so it can switch between providers like OpenAI, Gemini, Anthropic, and OpenRouter with simple configuration
 - **Simulation**: A specialized `lab_sim.py` module that models a Pd-catalyzed Suzuki-Miyaura cross-coupling, accounting for factors like catalyst decomposition and reactant solubility.
 - **Smart Context**: Implements a "Sliding Window" memory that prioritizes the **Best Overall Result** and the **Most Recent History**, ensuring the AI stays focused even during deep optimization runs.
-- **Robust Parsing**: Uses a custom regex-based JSON extractor capable of handling specialized "Thinking" blocks and conversational reasoning from advanced models like NVIDIA Nemotron.
+- **Parsing Layer**: A regex-based JSON extractor that can handle structured outputs even when models include extra reasoning text
 
 ---
 
